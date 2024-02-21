@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Products" icon-name="standard:account" variant="base">
+      <template if:true={products.data}>
+        <ul class="slds-m-around_medium">
+            <template for:each={products.data} for:item="product">
+                <li key = {product.Id}>
+                    <p>{product.Name}</p>
+                    <p>{product.Description}</p>
+                </li>
+            </template>
+        </ul>
+      </template>
+      <template if:true={products.error}>
+        <p>Error Fetching Products</p>
+      </template>
+    </lightning-card>
+</template>

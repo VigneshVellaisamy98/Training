@@ -1,0 +1,18 @@
+<template>
+    <lightning-card  title="Card">
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <p class="slds-var-p-horizontal_small">Input</p>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input value={inputValue} type="number" label="Enter some text" onchange={handleInput}></lightning-input>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+            <lightning-button variant="Neutral" label="Submit" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            <!-- <h2 class="slds-text-heading_small slds-m-bottom_small">handler and view the label of the clicked button.{clickedButtonLabel}</h2>  -->
+        </div>
+        <template if:true={newval}>
+            <lightning-slider     
+            value={clickedButtonLabel} step="10">
+            </lightning-slider>
+        </template>
+    </lightning-card>
+</template>
