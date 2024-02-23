@@ -33,4 +33,9 @@ public with sharing class GetNoOfContactsInAccount {
         }
         update getCases;
     }
+
+    @AuraEnabled(Cacheable = true)
+    public static Integer getNumberOfCases(Id accountId) {
+        return [SELECT count() FROM Case WHERE AccountId = :accountId];
+    }
 }
