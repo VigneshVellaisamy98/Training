@@ -1,4 +1,5 @@
-public with sharing class WeatherAPI {
+public  class WeatherAPI {
+    @AuraEnabled
     Public static String getWeather(String city){
            
         Http http = new http();

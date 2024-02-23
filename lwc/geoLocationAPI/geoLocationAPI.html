@@ -1,5 +1,5 @@
 <template>
-   <lightning-card icon-name="standard:account" variant="base" title="Geo Location API">
+   <lightning-card icon-name="standard:account" variant="base" title="Geo Weather API">
      <div class="slds-var-m-around_medium">
         <lightning-input 
           type="text"
@@ -8,11 +8,24 @@
         ></lightning-input>
         <br/>
         <lightning-button 
-          variant="base"
+          class="slds-m-left_x-small"
+          variant="Neutral"
           label="Submit" 
           onclick={handleClick} 
         ></lightning-button>
         <br/>
+        <template if:true={tempC}>
+          <div><b>Temperature in Celsius: {tempC}°C</b></div>
+        </template>
+        <br/>
+        <template if:true={tempF}>
+            <div><b>Temperature in Fahrenheit: {tempF}°F</b></div>
+        </template>
+        <br/>
+        <template if:true={imageUrl}>
+            <div><b>Condition: <img src={imageUrl}/></b></div>
+            <div><b>{condition}</b></div>
+        </template>
      </div>
    </lightning-card> 
 </template>
