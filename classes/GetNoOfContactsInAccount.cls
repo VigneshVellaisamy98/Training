@@ -6,7 +6,9 @@
 */
 
 public with sharing class GetNoOfContactsInAccount {
+    @InvocableMethod(Label = 'newLabel')
     public static void updateContactInAccount(List<Contact> contacts){
+        
         Set<Id> accountId = new Set<Id>();
 
         for (Contact Con : contacts) {
